@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureTech - Soluções em Segurança Eletrônica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6',
+                        dark: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .floating-button {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-3">
+                        <i class="fas fa-shield-alt text-white text-xl"></i>
+                    </div>
+                    <a href="#" class="text-2xl font-bold text-dark">Secure<span class="text-primary">Tech</span></a>
+                </div>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-dark hover:text-primary font-medium">Início</a>
+                    <a href="#services" class="text-dark hover:text-primary font-medium">Serviços</a>
+                    <a href="#about" class="text-dark hover:text-primary font-medium">Sobre</a>
+                    <a href="#contact" class="text-dark hover:text-primary font-medium">Contato</a>
+                </nav>
+                
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-dark focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 text-dark hover:text-primary">Início</a>
+                <a href="#services" class="block py-2 text-dark hover:text-primary">Serviços</a>
+                <a href="#about" class="block py-2 text-dark hover:text-primary">Sobre</a>
+                <a href="#contact" class="block py-2 text-dark hover:text-primary">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Proteção Inteligente para seu Patrimônio</h1>
+                <p class="text-xl mb-8 opacity-90">Soluções completas em segurança eletrônica com tecnologia de ponta e monitoramento 24/7.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact" class="bg-white text-primary font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition duration-300 text-center">
+                        Solicitar Orçamento
+                    </a>
+                    <a href="#services" class="border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:bg-opacity-10 transition duration-300 text-center">
+                        Nossos Serviços
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="Sistema de segurança" 
+                     class="rounded-xl shadow-2xl w-full max-w-lg mx-auto">
+                <div class="absolute -bottom-5 -left-5 bg-white p-4 rounded-lg shadow-lg hidden md:block">
+                    <div class="flex items-center">
+                        <div class="bg-primary rounded-full p-3 mr-3">
+                            <i class="fas fa-headset text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">Suporte 24 horas</p>
+                            <p class="font-bold text-dark">(11) 98765-4321</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-12 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-primary mb-2">15+</div>
+                    <p class="text-gray-600">Anos de Experiência</p>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-primary mb-2">2K+</div>
+                    <p class="text-gray-600">Clientes Satisfeitos</p>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-primary mb-2">24/7</div>
+                    <p class="text-gray-600">Monitoramento</p>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold text-primary mb-2">100%</div>
+                    <p class="text-gray-600">Garantia dos Equipamentos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Nossos Serviços</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Soluções personalizadas para atender todas as suas necessidades de segurança</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1590658268037-6bf12165ee3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" 
+                             alt="Câmeras de segurança" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-video text-primary text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark">Câmeras de Segurança</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Sistemas de CCTV com tecnologia HD, visão noturna, reconhecimento facial e armazenamento em nuvem.</p>
+                        <a href="#contact" class="text-primary font-medium hover:underline">Solicitar Orçamento →</a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1566228015668-4c45dbc4e2f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                             alt="Sistemas de alarme" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-bell text-primary text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark">Sistemas de Alarme</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Alarmes monitorados com sensores de movimento, quebra de vidros e acionamento silencioso para emergências.</p>
+                        <a href="#contact" class="text-primary font-medium hover:underline">Solicitar Orçamento →</a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Monitoramento 24h" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-desktop text-primary text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark">Monitoramento 24h</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Central de monitoramento própria com resposta rápida à emergências e integração com órgãos de segurança.</p>
+                        <a href="#contact" class="text-primary font-medium hover:underline">Solicitar Orçamento →</a>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Controle de acesso" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-fingerprint text-primary text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark">Controle de Acesso</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Sistemas de biometria, cartões de proximidade e controle remoto para portões e catracas.</p>
+                        <a href="#contact" class="text-primary font-medium hover:underline">Solicitar Orçamento →</a>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Cerca elétrica" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-bolt text-primary text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark">Cerca Elétrica</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Instalação de cercas elétricas com sensores de toque e integração com sistemas de alarme.</p>
+                        <a href="#contact" class="text-primary font-medium hover:underline">Solicitar Orçamento →</a>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Automação residencial" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                <i class="fas fa-home text-primary text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-dark">Automação Residencial</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Integração de sistemas de segurança com automação para iluminação, cortinas e eletrodomésticos.</p>
+                        <a href="#contact" class="text-primary font-medium hover:underline">Solicitar Orçamento →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">Sobre a SecureTech</h2>
+                    <p class="text-gray-600 mb-6 text-lg">
+                        Fundada em 2008, a SecureTech se tornou referência no mercado de segurança eletrônica, oferecendo soluções personalizadas para residências, condomínios e empresas.
+                    </p>
+                    <p class="text-gray-600 mb-8 text-lg">
+                        Nossa equipe de especialistas está sempre atualizada com as mais recentes tecnologias para garantir a proteção do seu patrimônio com eficiência e discrição.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4 mt-1">
+                                <i class="fas fa-check text-primary"></i>
+                            </div>
+                            <p class="text-gray-700">Equipe técnica especializada e treinada</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4 mt-1">
+                                <i class="fas fa-check text-primary"></i>
+                            </div>
+                            <p class="text-gray-700">Equipamentos de última geração</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary bg-opacity-10 p-2 rounded-full mr-4 mt-1">
+                                <i class="fas fa-check text-primary"></i>
+                            </div>
+                            <p class="text-gray-700">Atendimento personalizado 24 horas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Equipe SecureTech" 
+                         class="rounded-xl shadow-lg w-full">
+                    <div class="absolute -bottom-6 -right-6 bg-primary p-6 rounded-lg shadow-lg hidden lg:block">
+                        <div class="text-white">
+                            <div class="text-4xl font-bold mb-2">15+</div>
+                            <p class="opacity-90">Anos no mercado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">O que nossos clientes dizem</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">A satisfação e segurança dos nossos clientes é nossa maior recompensa</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"A SecureTech instalou um sistema completo na minha casa e no meu comércio. O atendimento é excelente e o sistema funciona perfeitamente. Recomendo!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" 
+                             alt="Cliente satisfeito" 
+                             class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-dark">Ana Carolina</h4>
+                            <p class="text-gray-500 text-sm">Residencial - São Paulo</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Depois de instalar as câmeras e o alarme monitorado, me sinto muito mais seguro. A equipe foi muito profissional e o sistema é fácil de usar."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" 
+                             alt="Cliente satisfeito" 
+                             class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-dark">Roberto Almeida</h4>
+                            <p class="text-gray-500 text-sm">Comercial - Rio de Janeiro</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Contratei o serviço de monitoramento 24h para meu condomínio e todos os moradores aprovaram. A resposta a incidentes é rápida e eficiente."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" 
+                             alt="Cliente satisfeito" 
+                             class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-dark">Mariana Santos</h4>
+                            <p class="text-gray-500 text-sm">Condomínio - Belo Horizonte</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Entre em Contato</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Solicite um orçamento ou tire suas dúvidas com nossa equipe</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Nome</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">E-mail</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Telefone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition">
+                        </div>
+                        <div>
+                            <label for="service" class="block text-gray-700 font-medium mb-2">Serviço de interesse</label>
+                            <select id="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition">
+                                <option value="">Selecione um serviço</option>
+                                <option value="cameras">Câmeras de Segurança</option>
+                                <option value="alarmes">Sistemas de Alarme</option>
+                                <option value="monitoramento">Monitoramento 24h</option>
+                                <option value="controle">Controle de Acesso</option>
+                                <option value="cerca">Cerca Elétrica</option>
+                                <option value="automacao">Automação Residencial</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Mensagem</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-secondary transition duration-300">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-xl h-full">
+                        <h3 class="text-2xl font-bold text-dark mb-6">Outras formas de contato</h3>
+                        
+                        <div class="space-y-6">
+                            <!-- WhatsApp -->
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fab fa-whatsapp text-green-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark mb-1">WhatsApp</h4>
+                                    <p class="text-gray-600 mb-2">Atendimento rápido via mensagem</p>
+                                    <a href="https://wa.me/5511987654321" class="text-primary font-medium hover:underline">(11) 98765-4321</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Email -->
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark mb-1">E-mail</h4>
+                                    <p class="text-gray-600 mb-2">Respondemos em até 24h</p>
+                                    <a href="mailto:contato@securetech.com.br" class="text-primary font-medium hover:underline">contato@securetech.com.br</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Phone -->
+                            <div class="flex items-start">
+                                <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-purple-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark mb-1">Telefone</h4>
+                                    <p class="text-gray-600 mb-2">Atendimento de segunda a sexta, 8h às 18h</p>
+                                    <a href="tel:+551123456789" class="text-primary font-medium hover:underline">(11) 2345-6789</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Address -->
+                            <div class="flex items-start">
+                                <div class="bg-orange-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-orange-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark mb-1">Endereço</h4>
+                                    <p class="text-gray-600 mb-2">Visite nossa sede</p>
+                                    <p class="text-gray-700">Av. Paulista, 1000 - São Paulo/SP</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h3 class="text-xl text-gray-600">Trabalhamos com as melhores marcas do mercado</h3>
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                <img src="https://via.placeholder.com/120x60?text=Intelbras" alt="Intelbras" class="h-12 opacity-70 hover:opacity-100 transition">
+                <img src="https://via.placeholder.com/120x60?text=Dahua" alt="Dahua" class="h-12 opacity-70 hover:opacity-100 transition">
+                <img src="https://via.placeholder.com/120x60?text=Hikvision" alt="Hikvision" class="h-12 opacity-70 hover:opacity-100 transition">
+                <img src="https://via.placeholder.com/120x60?text=Axis" alt="Axis" class="h-12 opacity-70 hover:opacity-100 transition">
+                <img src="https://via.placeholder.com/120x60?text=Bosch" alt="Bosch" class="h-12 opacity-70 hover:opacity-100 transition">
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5511987654321" class="fixed bottom-8 right-8 bg-green-500 text-white p-4 rounded-full shadow-xl hover:bg-green-600 transition floating-button z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-shield-alt text-white text-xl"></i>
+                        </div>
+                        <a href="#" class="text-2xl font-bold text-white">Secure<span class="text-primary">Tech</span></a>
+                    </div>
+                    <p class="text-gray-400 mb-4">Soluções completas em segurança eletrônica para proteger o que é mais importante para você.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Serviços</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Câmeras de Segurança</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Sistemas de Alarme</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Monitoramento 24h</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Controle de Acesso</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Cerca Elétrica</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links Úteis</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Sobre Nós</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Política de Privacidade</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Termos de Serviço</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary mr-2 mt-1"></i>
+                            <span class="text-gray-400">Av. Paulista, 1000<br>São Paulo/SP</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-primary mr-2"></i>
+                            <a href="tel:+551123456789" class="text-gray-400 hover:text-white transition">(11) 2345-6789</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-primary mr-2"></i>
+                            <a href="mailto:contato@securetech.com.br" class="text-gray-400 hover:text-white transition">contato@securetech.com.br</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 SecureTech. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Form submission
+        const form = document.querySelector('form');
+        if(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Obrigado por sua mensagem! Entraremos em contato em breve.');
+                form.reset();
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if(!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
